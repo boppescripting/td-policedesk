@@ -15,7 +15,19 @@ TDPD.Config.FailureMessage = 'There are no on duty police officers at this time.
 
 -- THE TEXT DISPLAYED AT THE POLICE DESK.
 -- DEFAULT: '[~g~E~w~] Request Officer'
-TDPD.Config.3dText = '[~g~E~w~] Request Officer'
+TDPD.Config.PopupText = '[~g~E~w~] Request Officer'
+
+-- THE EMAIL SENDER FOR THE POLICE EMAIL.
+-- DEFAULT: 'Police Dispatcher'
+TDPD.Config.EmailSender = 'Police Dispatcher'
+
+-- THE EMAIL SUBJECT FOR THE POLICE EMAIL.
+-- DEFAULT: 'Assistance Required'
+TDPD.Config.EmailSubject = 'Assistance Required'
+
+-- THE EMAIL MESSAGE FOR THE POLICE EMAIL.
+-- DEFAULT: 'Officer,<br/>There is an individual at the police department desk requesting the assistance of a present officer.'
+TDPD.Config.EmailMessage = 'Officer,<br/>There is an individual at the police department desk requesting the assistance of a present officer.'
 
 -- JOB NAMES FOR POLICE. DOES ACCEPT MULTIPLE JOBS (lspd, bcso, etc.).
 -- DEFAULT: { 'police' }

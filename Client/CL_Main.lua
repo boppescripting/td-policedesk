@@ -10,7 +10,7 @@ CreateThread(function()
         if dist < 15 then
             sleep = 5
             if dist < 1.5 then
-                TDPD.Utils.DrawText3Ds(TDPD.Config.Coords, TDPD.Config.3dText)
+                TDPD.Utils.DrawText3Ds(TDPD.Config.Coords, TDPD.Config.PopupText)
 
                 if IsControlJustPressed(0, 38) then
                     QBCore.Functions.TriggerCallback('tdpd:server:getCops', function(cops)

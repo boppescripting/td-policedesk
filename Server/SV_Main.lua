@@ -17,9 +17,9 @@ AddEventHandler('tdpd:server:requestPD', function()
         if TDPD.Utils.hasJob(v.PlayerData.job.name) and v.PlayerData.job.onduty then
             local cid = v.PlayerData.citizenid
             TriggerEvent('qb-phone:server:sendNewMailToOffline', cid, {
-                sender = "Police Dispatcher",
-                subject = "Assistance Required",
-                message = "Officer,<br/>There is an individual at the police department desk requesting the assistance of a present officer.",
+                sender = TDPD.Config.EmailSender,
+                subject = TDPD.Config.EmailSubject,
+                message = TDPD.Config.EmailMessage,
                 button = {}
             })
         end
