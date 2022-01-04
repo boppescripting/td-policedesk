@@ -10,12 +10,10 @@ When civilians visit the police department, they may now send a phone notificati
 - QBCore
 
 **_Suggestions_**
-Please feel more than free to leave a comment on this post or in my Discord about auggestions you'd like added to this resource!
-
-**_Preview_**
+Please feel more than free to leave a comment in my Discord about auggestions you'd like added to this resource!
 
 **_Localization_**
-English
+English (configurable)
 
 **_Questions, Concerns, and Support_**
 [Feel free to join our Discord server!](https://discord.com/invite/Sft3RpBz2w)
