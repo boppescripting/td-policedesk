@@ -11,7 +11,7 @@ QBCore.Functions.CreateCallback('tdpd:server:getCops', function(source, cb)
 end)
 
 RegisterServerEvent('tdpd:server:requestPD')
-AddEventHandler('tdpd:server:requestPD', function()
+AddEventHandler('tdpd:server:requestPD', function(blipName)
     local src = source
     for k, v in pairs(QBCore.Functions.GetQBPlayers()) do
         if TDPD.Utils.hasJob(v.PlayerData.job.name) and v.PlayerData.job.onduty then
@@ -19,7 +19,7 @@ AddEventHandler('tdpd:server:requestPD', function()
             TriggerEvent('qb-phone:server:sendNewMailToOffline', cid, {
                 sender = TDPD.Config.EmailSender,
                 subject = TDPD.Config.EmailSubject,
-                message = TDPD.Config.EmailMessage,
+                message = TDPD.Config.EmailMessage .. blipName .. '.',
                 button = {}
             })
         end
