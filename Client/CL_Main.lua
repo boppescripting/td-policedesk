@@ -9,7 +9,7 @@ AddEventHandler('td-policedesk:client:requestAssistance', function()
             if cooldown ~= 0 then
                 QBCore.Functions.Notify(TDPD.Config.PleaseWait, 'error')
             else
-                TriggerServerEvent('tdpd:server:requestPD')
+                TriggerServerEvent('tdpd:server:requestPD', '')
                 QBCore.Functions.Notify(TDPD.Config.SuccessMessage, 'success')
                 cooldown = TDPD.Config.RequestCooldown * 1000
                 Citizen.SetTimeout(TDPD.Config.RequestCooldown * 1000, function()
@@ -26,7 +26,7 @@ CreateThread(function()
     setupTargetExport()
 
 	while true do
-        if usingThirdEye then
+        if not usingThirdEye then
             for key, value in pairs(TDPD.Config.Locations) do
                 for name, coords in pairs (TDPD.Config.Locations[key]) do
                     local blipName = TDPD.Config.Locations[key].name
@@ -81,7 +81,6 @@ function setupTargetExport()
                         event = "td-policedesk:client:requestAssistance",
                         icon = "fas fa-clipboard",
                         label = "Request an officer",
-                        dept = "MRPD"
                     },
                 },
                 distance = 2.5
