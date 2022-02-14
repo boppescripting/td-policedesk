@@ -78,7 +78,7 @@ function setupTargetExport()
                 options = {
                     {
                         type = "client",
-                        event = "td-policedesk:client:notify",
+                        event = "td-policedesk:client:requestAssistance",
                         icon = "fas fa-clipboard",
                         label = "Request an officer",
                         dept = "MRPD"
