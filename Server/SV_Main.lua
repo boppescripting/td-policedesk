@@ -2,7 +2,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateCallback('tdpd:server:getCops', function(source, cb)
 	amount = 0
-    for k, v in pairs(QBCore.Functions.GetPlayers()) do
+    for k, v in pairs(QBCore.Functions.GetQBPlayers()) do
         if TDPD.Utils.hasJob(v.PlayerData.job.name) and v.PlayerData.job.onduty then
             amount = amount + 1
         end
@@ -20,7 +20,7 @@ AddEventHandler('tdpd:server:requestPD', function(blipName)
         data = {dispatchCode = 'officerAssistance', caller = callerData, coords = GetEntityCoords(GetPlayerPed(src)), netId = NetworkGetNetworkIdFromEntity(GetPlayerPed(src)), length = 6000}
         TriggerEvent('wf-alerts:svNotify', data)
     else
-        for k, v in pairs(QBCore.Functions.GetPlayers()) do
+        for k, v in pairs(QBCore.Functions.GetQBPlayers()) do
             if TDPD.Utils.hasJob(v.PlayerData.job.name) and v.PlayerData.job.onduty then
                 local cid = v.PlayerData.citizenid
                 TriggerEvent('qb-phone:server:sendNewMailToOffline', cid, {
